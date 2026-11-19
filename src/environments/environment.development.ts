@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://localhost:5052/scalar/v1',
+  apiUrl: 'http://localhost:5052/api/v1',
 };
