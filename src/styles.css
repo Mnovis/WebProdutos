@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globais do WebProdutos (carregados depois do Bootstrap) */
+/* Tema escuro: o <html> do index.html tem data-bs-theme="dark" */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Cores base do tema escuro */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0b1020;
+  --bs-body-color: #e2e8f0;
+  --bs-secondary-color: #94a3b8;
+  --bs-border-color: #26304a;
+  --bs-tertiary-bg: #141b2f;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.app-navbar {
+  background-color: #080c1a;
+  border-bottom: 1px solid #1c2440;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: #6366f1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* Painel de boas-vindas do dashboard */
+.hero {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  color: #ffffff;
+  border-radius: 1rem;
+}
+
+/* Cards */
+.page-card,
+.card-action {
+  --bs-card-bg: #131a2e;
+  overflow: hidden;
+  border: 1px solid #1f2942;
+  border-radius: 1rem;
+}
+
+.card-action {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-action:hover {
+  transform: translateY(-3px);
+  border-color: #4f46e5;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.35) !important;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box-indigo {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+}
+
+.icon-box-green {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+}
+
+/* Tabela dentro do card */
+.page-card .table {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.03);
+}
+
+.table thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+/* Campos de formulário */
+.form-control,
+.input-group-text {
+  background-color: #0f1527;
+  border-color: #26304a;
+}
+
+.form-control:focus {
+  background-color: #0f1527;
+  border-color: #818cf8;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+/* Cor principal (índigo) nos botões do Bootstrap */
+.btn-primary {
+  --bs-btn-bg: #4f46e5;
+  --bs-btn-border-color: #4f46e5;
+  --bs-btn-hover-bg: #4338ca;
+  --bs-btn-hover-border-color: #4338ca;
+  --bs-btn-active-bg: #3730a3;
+  --bs-btn-active-border-color: #3730a3;
+  --bs-btn-disabled-bg: #4f46e5;
+  --bs-btn-disabled-border-color: #4f46e5;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #a5b4fc;
+  --bs-btn-border-color: #3f4a8a;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #4f46e5;
+  --bs-btn-hover-border-color: #4f46e5;
+  --bs-btn-active-bg: #4338ca;
+  --bs-btn-active-border-color: #4338ca;
+}
+
+/* Textos secundários mais legíveis no fundo escuro */
+.text-secondary {
+  color: #94a3b8 !important;
+}
+
+/* Selo de estoque na consulta */
+.badge-estoque {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+}
+
+/* Botão secundário (Cancelar) */
+.btn-outline-secondary {
+  --bs-btn-color: #cbd5e1;
+  --bs-btn-border-color: #334155;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #1e293b;
+  --bs-btn-hover-border-color: #475569;
+  --bs-btn-active-bg: #1e293b;
+  --bs-btn-active-border-color: #475569;
+}
