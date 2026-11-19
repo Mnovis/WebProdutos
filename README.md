@@ -1,59 +1,74 @@
 # WebProdutos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+Front-end em **Angular** para o gerenciamento de produtos: cadastro, consulta, edição e exclusão integrados a uma API REST em ASP.NET Core. Interface com **Bootstrap 5.3** em tema escuro.
 
-## Development server
+Projeto desenvolvido para a **Lista de Exercícios 01 – ASP.NET Core API / Angular** do curso **C#.NET WebDeveloper (Formação Fullstack)** da COTI Informática.
 
-To start a local development server, run:
+A API consumida por este projeto está no repositório **[Api.Produtos](https://github.com/Mnovis/Api.Produtos)**.
 
-```bash
-ng serve
+---
+
+## Telas
+
+### Dashboard
+
+![Dashboard do WebProdutos](docs/telas/dashboard.png)
+
+### Consulta de produtos
+
+![Consulta de produtos com ações de editar e excluir](docs/telas/consulta.png)
+
+### Cadastro de produtos
+
+![Formulário de cadastro de produtos](docs/telas/cadastro.png)
+
+---
+
+## Funcionalidades
+
+- **Cadastro** com formulário reativo e validação em tempo real (nome, preço e quantidade)
+- **Consulta** em tabela, com o preço formatado em reais e um selo de "Sem estoque" para produtos zerados
+- **Edição** com o formulário preenchido a partir da API
+- **Exclusão** com confirmação antes de apagar
+- Layout responsivo, com menu recolhível no celular
+
+## Rotas
+
+| Rota                   | Página                     | Chamada à API                                             |
+| ---------------------- | -------------------------- | --------------------------------------------------------- |
+| `/dashboard`           | Página inicial com atalhos | nenhuma                                                   |
+| `/cadastro-produtos`   | Cadastro                   | `POST /api/v1/produtos`                                   |
+| `/consulta-produtos`   | Consulta e exclusão        | `GET /api/v1/produtos` e `DELETE /api/v1/produtos/{id}`   |
+| `/edicao-produtos/:id` | Edição                     | `GET /api/v1/produtos/{id}` e `PUT /api/v1/produtos/{id}` |
+
+---
+
+## Tecnologias
+
+- Angular 22 (componentes standalone, Signals e control flow `@if` / `@for`)
+- Reactive Forms com validadores
+- HttpClient para a integração com a API
+- Bootstrap 5.3 com o modo escuro (`data-bs-theme="dark"`)
+
+## Estrutura
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   └── navbar/
+│   │   └── pages/
+│   │       ├── dashboard/
+│   │       ├── cadastro-produtos/
+│   │       ├── consulta-produtos/
+│   │       └── edicao-produtos/
+│   ├── app.config.ts
+│   └── app.routes.ts
+├── environments/
+│   ├── environment.ts
+│   └── environment.development.ts
+└── styles.css
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
